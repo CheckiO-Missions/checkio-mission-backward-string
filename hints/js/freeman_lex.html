@@ -1,0 +1,123 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        <i>I have no idea how to start solving this mission.</i>
+    </div>
+    <div class="answer">
+        <p>
+            💡 The idea is to declare new string variable, iterate over the <b class="code">value</b> and add each character to the start of the new string.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <i>Ok, what should I start from?</i>
+    </div>
+    <div class="answer">
+        <p>
+            Let's declare new variable <b class="code">res</b> with the initial value of empty string.
+        </p>
+        <pre class="brush: javascript">
+let res = "";
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <i>
+            That's easy! But how to move over the initial string?
+        </i>
+    </div>
+    <div class="answer">
+        <p>
+            For this purpose use <a target="_blank" href="https://www.w3schools.com/js/js_loop_forof.asp">for/of</a> loop.
+        </p>
+        <pre class="brush: javascript">
+let res = "";
+for (let char of value)
+    ...;
+        </pre>
+        <p>
+            Since you will have only one line of code inside the loop, you may not use curvy brackets.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <i>
+            I don't understand how to add each character to the new string properly.
+        </i>
+    </div>
+    <div class="answer">
+        <p>
+            You need to get a string with backward order of characters. If with normal order you just add new character to the end of the existed line of characters, so with backward order you need to add each new character before the existed line.
+        </p>
+        <pre class="brush: javascript">
+let res = "";
+for (let char of value)
+    res = char + res;
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <i>So, how my final solution should look like?</i>
+    </div>
+    <div class="answer">
+        <p>
+            You just need to wrap your code into function expression and return new string <b class="code">res</b>.
+        </p>
+        <p>Here is the whole solution:</p>
+        <pre class="brush: javascript">
+function backwardString(value: string): string {
+
+    let res = "";
+    for (let char of value)
+        res = char + res;
+    
+    return res;
+}
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <i>Show me more solutions!<br />
+        'Cause I wanna be a real 🥇 Javascript Hero!</i>
+    </div>
+    <div class="answer">
+        <p>Sure, grab it!</p>
+        <p>
+            This solution uses recursion - each time you put first character after the call of the same function, but with smaller string argument. To avoid infinite recursion, just return the string from one character.
+        </p>
+        <pre class="brush: javascript">
+function backwardString(value: string): string {
+
+    if (value.length < 2)
+        
+        return value;
+    
+    return backwardString(value.slice(1)) + value.charAt(0);
+}
+        </pre>
+        <p>
+            One-line solution, where you split the initial string by the empty character (result - Array of all characters), reverse the Array and join all characters with empty character between each two - simply join all characters in the new string.
+        </p>
+        <pre class="brush: javascript">
+function backwardString(value: string): string {
+    
+    return value.split('').reverse().join('');
+}
+        </pre>
+        <p><b>Click "Best solutions" at mission menu and see a lot of other interesting solutions!</b></p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <i>Thanks! I know and understand more now! Everything works fine!</i>
+    </div>
+    <div class="answer">
+        👍 Glad to hear it!
+    </div>
+</div>
+</body>
