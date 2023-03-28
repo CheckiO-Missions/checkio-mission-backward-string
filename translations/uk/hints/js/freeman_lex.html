@@ -68,6 +68,7 @@ for (let char of value)
             Тобі лише потрібно обгорнути свій код у вираз функції і повернути новий рядок <b class="code">res</b>.
         </p>
         <p>Ось повний розв'язок:</p>
+        <div class="spoiler">
         <pre class="brush: javascript">
 function backwardString(value: string): string {
 
@@ -78,6 +79,7 @@ function backwardString(value: string): string {
     return res;
 }
         </pre>
+        </div>
     </div>
 </div>
 <div class="question-answer">
@@ -90,6 +92,7 @@ function backwardString(value: string): string {
         <p>
             Цей розв'язок використовує рекурсію - кожен раз ти поміщаєш перший символ після виклику цієї ж функції, але із меншим рядком в якості аргументу. Щоб уникнути безкінечної рекурсії, просто повертай рядок із одного символа. 
         </p>
+        <div class="spoiler">
         <pre class="brush: javascript">
 function backwardString(value: string): string {
 
@@ -100,15 +103,18 @@ function backwardString(value: string): string {
     return backwardString(value.slice(1)) + value.charAt(0);
 }
         </pre>
+        </div>
         <p>
             Однорядковий розв'язок, в якому ти розбиваєш початковий рядок із роздільником у вигляді порожнього символа (результат - масив із усіх символів), обертаєш цей масив і з'єднуєш всі символи із допомогою порожнього символа між кожними двома - просто з'єднуєш всі символи в один новий рядок.
         </p>
+        <div class="spoiler">
         <pre class="brush: javascript">
 function backwardString(value: string): string {
     
     return value.split('').reverse().join('');
 }
         </pre>
+        </div>
         <p><b>Тисни "Best solutions" в меню місії і побачиш багато інших цікавих розв'язків!</b></p>
     </div>
 </div>
