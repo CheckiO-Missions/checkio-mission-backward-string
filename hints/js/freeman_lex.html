@@ -68,6 +68,7 @@ for (let char of value)
             You just need to wrap your code into function expression and return new string <b class="code">res</b>.
         </p>
         <p>Here is the whole solution:</p>
+        <div class="spoiler">
         <pre class="brush: javascript">
 function backwardString(value: string): string {
 
@@ -78,6 +79,7 @@ function backwardString(value: string): string {
     return res;
 }
         </pre>
+        </div>
     </div>
 </div>
 <div class="question-answer">
@@ -90,6 +92,7 @@ function backwardString(value: string): string {
         <p>
             This solution uses recursion - each time you put first character after the call of the same function, but with smaller string argument. To avoid infinite recursion, just return the string from one character.
         </p>
+        <div class="spoiler">
         <pre class="brush: javascript">
 function backwardString(value: string): string {
 
@@ -100,15 +103,18 @@ function backwardString(value: string): string {
     return backwardString(value.slice(1)) + value.charAt(0);
 }
         </pre>
+        </div>
         <p>
             One-line solution, where you split the initial string by the empty character (result - Array of all characters), reverse the Array and join all characters with empty character between each two - simply join all characters in the new string.
         </p>
+        <div class="spoiler">
         <pre class="brush: javascript">
 function backwardString(value: string): string {
     
     return value.split('').reverse().join('');
 }
         </pre>
+        </div>
         <p><b>Click "Best solutions" at mission menu and see a lot of other interesting solutions!</b></p>
     </div>
 </div>
