@@ -1,0 +1,129 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        <p>Je n'ai aucune idée de la manière de commencer à résoudre cette mission.</p>
+    </div>
+    <div class="answer">
+        <p>
+            💡 L'idée est de déclarer une nouvelle variable de type chaîne, d'itérer sur la <b class="code">valeur</b> et d'ajouter chaque caractère au début de la nouvelle chaîne.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Ok, par quoi dois-je commencer ?</p>
+    </div>
+    <div class="answer">
+        <p>
+            Déclarons la nouvelle variable <b class="code">res</b> avec la valeur initiale de la chaîne vide.
+        </p>
+        <pre class="brush: javascript">
+let res = "" ;
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Voilà qui est simple ! Mais comment passer à la chaîne de caractères initiale ?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Pour cela, utilisez la boucle <a target="_blank" href="https://www.w3schools.com/js/js_loop_forof.asp">for/of.</a> 
+        </p>
+        <pre class="brush: javascript">
+let res = "" ;
+for (let char of value)
+    ... ;
+        </pre>
+        <p>
+            Comme vous n'aurez qu'une seule ligne de code à l'intérieur de la boucle, vous ne pouvez pas utiliser de parenthèses curvilignes.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Je ne comprends pas comment ajouter correctement chaque caractère à la nouvelle chaîne.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Vous devez obtenir une chaîne de caractères dans l'ordre inverse. Si, dans l'ordre normal, vous ajoutez simplement un nouveau caractère à la fin de la ligne de caractères existante, dans l'ordre inverse, vous devez ajouter chaque nouveau caractère avant la ligne existante.
+        </p>
+        <pre class="brush: javascript">
+let res = "" ;
+for (let char of value)
+    res = char + res ;
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Alors, à quoi devrait ressembler ma solution finale ?</p>
+    </div>
+    <div class="answer">
+        <p>
+            Il vous suffit d'envelopper votre code dans une expression de fonction et de renvoyer la nouvelle chaîne de caractères <b class="code">res</b>.
+        </p>
+        <p>Voici la solution complète :</p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function backwardString(value : string) : string {
+
+    let res = "" ;
+    for (let char of value)
+        res = char + res ;
+    
+    return res ;
+}
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Montrez-moi d'autres solutions !<br />
+        parce que je veux être un vrai 🥇 Javascript Hero !</p>
+    </div>
+    <div class="answer">
+        <p>Bien sûr, prenez-le !</p>
+        <p>
+            Cette solution utilise la récursivité - chaque fois que vous mettez le premier caractère après l'appel de la même fonction, mais avec un argument de chaîne plus petit. Pour éviter une récursion infinie, renvoyez simplement la chaîne à partir d'un seul caractère.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function backwardString(value : string) : string {
+
+    if (value.length &lt; 2)
+        
+        return value ;
+    
+    return backwardString(value.slice(1)) + value.charAt(0) ;
+}
+        </pre>
+        </div>
+        <p>
+            Solution en une ligne, où vous divisez la chaîne initiale par le caractère vide (résultat - tableau de tous les caractères), inversez le tableau et joignez tous les caractères avec le caractère vide entre chaque - joignez simplement tous les caractères dans la nouvelle chaîne.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function backwardString(value : string) : string {
+    
+    return value.split('').reverse().join('') ;
+}
+        </pre>
+        </div>
+        <p><b>Cliquez sur "Meilleures solutions" dans le menu de la mission et découvrez de nombreuses autres solutions intéressantes !</b></p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Merci beaucoup ! Je sais et je comprends mieux maintenant ! Tout fonctionne bien !</p>
+    </div>
+    <div class="answer">
+        👍 Heureux de l'apprendre !
+    </div>
+</div>
+</body>
