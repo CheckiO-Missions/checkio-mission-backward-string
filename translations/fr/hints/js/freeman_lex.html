@@ -25,7 +25,7 @@ let res = "" ;
 <div class="question-answer">
     <div class="question">
         <p>
-            Voilà qui est simple ! Mais comment passer à la chaîne de caractères initiale ?
+            Voilà qui est simple! Mais comment passer à la chaîne de caractères initiale?
         </p>
     </div>
     <div class="answer">
@@ -53,30 +53,30 @@ for (let char of value)
             Vous devez obtenir une chaîne de caractères dans l'ordre inverse. Si, dans l'ordre normal, vous ajoutez simplement un nouveau caractère à la fin de la ligne de caractères existante, dans l'ordre inverse, vous devez ajouter chaque nouveau caractère avant la ligne existante.
         </p>
         <pre class="brush: javascript">
-let res = "" ;
+let res = "";
 for (let char of value)
-    res = char + res ;
+    res = char + res;
         </pre>
     </div>
 </div>
 <div class="question-answer">
     <div class="question">
-        <p>Alors, à quoi devrait ressembler ma solution finale ?</p>
+        <p>Alors, à quoi devrait ressembler ma solution finale?</p>
     </div>
     <div class="answer">
         <p>
             Il vous suffit d'envelopper votre code dans une expression de fonction et de renvoyer la nouvelle chaîne de caractères <b class="code">res</b>.
         </p>
-        <p>Voici la solution complète :</p>
+        <p>Voici la solution complète:</p>
         <div class="spoiler">
         <pre class="brush: javascript">
-function backwardString(value : string) : string {
+function backwardString(value: string): string {
 
-    let res = "" ;
+    let res = "";
     for (let char of value)
-        res = char + res ;
+        res = char + res;
     
-    return res ;
+    return res;
 }
         </pre>
         </div>
@@ -84,8 +84,8 @@ function backwardString(value : string) : string {
 </div>
 <div class="question-answer">
     <div class="question">
-        <p>Montrez-moi d'autres solutions !<br />
-        parce que je veux être un vrai 🥇 Javascript Hero !</p>
+        <p>Montrez-moi d'autres solutions!<br />
+        parce que je veux être un vrai 🥇 Javascript Hero!</p>
     </div>
     <div class="answer">
         <p>Bien sûr, prenez-le !</p>
@@ -94,13 +94,13 @@ function backwardString(value : string) : string {
         </p>
         <div class="spoiler">
         <pre class="brush: javascript">
-function backwardString(value : string) : string {
+function backwardString(value: string): string {
 
     if (value.length &lt; 2)
         
-        return value ;
+        return value;
     
-    return backwardString(value.slice(1)) + value.charAt(0) ;
+    return backwardString(value.slice(1)) + value.charAt(0);
 }
         </pre>
         </div>
@@ -109,21 +109,21 @@ function backwardString(value : string) : string {
         </p>
         <div class="spoiler">
         <pre class="brush: javascript">
-function backwardString(value : string) : string {
+function backwardString(value: string): string {
     
-    return value.split('').reverse().join('') ;
+    return value.split('').reverse().join('');
 }
         </pre>
         </div>
-        <p><b>Cliquez sur "Meilleures solutions" dans le menu de la mission et découvrez de nombreuses autres solutions intéressantes !</b></p>
+        <p><b>Cliquez sur "Best solutions" dans le menu de la mission et découvrez de nombreuses autres solutions intéressantes !</b></p>
     </div>
 </div>
 <div class="question-answer">
     <div class="question">
-        <p>Merci beaucoup ! Je sais et je comprends mieux maintenant ! Tout fonctionne bien !</p>
+        <p>Merci beaucoup! Je sais et je comprends mieux maintenant! Tout fonctionne bien!</p>
     </div>
     <div class="answer">
-        👍 Heureux de l'apprendre !
+        👍 Heureux de l'apprendre!
     </div>
 </div>
 </body>
