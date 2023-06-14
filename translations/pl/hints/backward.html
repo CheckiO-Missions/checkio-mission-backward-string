@@ -1,0 +1,56 @@
+<body data-author="Doppelok">
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Nie mam pojęcia, jak zacząć rozwiązywać tę misję...
+        </p>
+    </div>
+    <div class="answer">
+        <p>Po pierwsze - proszę mi pomóc <a href="https://www.google.com/search?q=python+slicing" target="_blank">google "python slicing".</a></p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Nie mogę zrozumieć...
+        </p>
+    </div>
+    <div class="answer">
+        <p>Proszę zrobić prosty test. Co się stanie, jeśli otworzy Pan konsolę Pythona i powie "a = [1, 2, 3]", a następnie użyje ujemnego kroku do tej listy?</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Co to jest "krok ujemny"?
+        </p>
+    </div>
+    <div class="answer">
+        <p>Można użyć kroku ujemnego, aby uzyskać odwróconą listę:</p>
+        <pre class="brush: python">
+a = [1, 2, 3]
+print(a[::-1])
+        </pre>
+        <div class="output">
+            <p>Wynik:</p>
+            <pre>[3, 2, 1]</pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Ostatnie pytanie. Jak będzie wyglądało moje ostateczne rozwiązanie?
+        </p>
+    </div>
+    <div class="answer">
+        <div class="spoiler">
+        <pre class="brush: python">
+def backward_string(val: str) -> str:
+
+    return val[::-1]
+        </pre>
+        </div>
+    </div>
+</div>
+</body>
