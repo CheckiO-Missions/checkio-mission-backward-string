@@ -1,0 +1,129 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        <p>Nie mam pojęcia, jak zacząć rozwiązywać tę misję.</p>
+    </div>
+    <div class="answer">
+        <p>
+            pomysł polega na zadeklarowaniu nowej zmiennej typu string, iterowaniu po <b class="code">value</b> i dodawaniu każdego znaku na początku nowego ciągu.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Ok, od czego powinienem zacząć?</p>
+    </div>
+    <div class="answer">
+        <p>
+            Zadeklarujmy nową zmienną <b class="code">res</b> z wartością początkową pustego ciągu.
+        </p>
+        <pre class="brush: javascript">
+let res = "";
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            To proste! Ale jak przenieść początkowy ciąg znaków?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            W tym celu proszę użyć pętli <a target="_blank" href="https://www.w3schools.com/js/js_loop_forof.asp">for/of</a>.
+        </p>
+        <pre class="brush: javascript">
+let res = "";
+for (let char of value)
+    ...;
+        </pre>
+        <p>
+            Ponieważ wewnątrz pętli będzie tylko jedna linia kodu, można nie używać nawiasów klamrowych.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Nie rozumiem, jak prawidłowo dodać każdy znak do nowego ciągu.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Musi Pan otrzymać ciąg znaków w kolejności wstecznej. Jeśli przy normalnej kolejności wystarczy dodać nowy znak na końcu istniejącej linii znaków, to przy kolejności wstecznej należy dodać każdy nowy znak przed istniejącą linią.
+        </p>
+        <pre class="brush: javascript">
+let res = "";
+for (let char of value)
+    res = char + res;
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Jak więc powinno wyglądać moje ostateczne rozwiązanie?</p>
+    </div>
+    <div class="answer">
+        <p>
+            Wystarczy zawinąć swój kod w wyrażenie funkcji i zwrócić nowy ciąg <b class="code">res</b>.
+        </p>
+        <p>Oto całe rozwiązanie:</p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function backwardString(value: string): string {
+
+    let res = "";
+    for (let char of value)
+        res = char + res;
+    
+    return res;
+}
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Proszę pokazać mi więcej rozwiązań!<br />
+        bo chcę być prawdziwym 🥇 bohaterem Javascript!</p>
+    </div>
+    <div class="answer">
+        <p>Jasne, proszę pobrać!</p>
+        <p>
+            To rozwiązanie wykorzystuje rekurencję - za każdym razem proszę umieścić pierwszy znak po wywołaniu tej samej funkcji, ale z mniejszym argumentem string. Aby uniknąć nieskończonej rekurencji, proszę po prostu zwrócić ciąg od jednego znaku.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function backwardString(value: string): string {
+
+    if (value.length < 2)
+        
+        return value;
+    
+    return backwardString(value.slice(1)) + value.charAt(0);
+}
+        </pre>
+        </div>
+        <p>
+            Rozwiązanie jednoliniowe, w którym dzielimy początkowy ciąg przez pusty znak (wynik - tablica wszystkich znaków), odwracamy tablicę i łączymy wszystkie znaki z pustym znakiem między każdym z nich - po prostu łączymy wszystkie znaki w nowym ciągu.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function backwardString(value: string): string {
+    
+    return value.split('').reverse().join('');
+}
+        </pre>
+        </div>
+        <p><b>Click "Best solutions" at mission menu and see a lot of other interesting solutions!</b></p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Dzięki! Teraz wiem i rozumiem więcej! Wszystko działa jak należy!</p>
+    </div>
+    <div class="answer">
+        miło mi to słyszeć!
+    </div>
+</div>
+</body>
