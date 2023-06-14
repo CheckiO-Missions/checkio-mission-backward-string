@@ -1,25 +1,24 @@
 <!-- Describe task in general -->
 
 <p>
-    Zwróć ciąg znaków w odwrotnej kolejności.
+    Proszę zwrócić podany ciąg znaków w odwrotnej kolejności.
 </p>
 
 <!-- Explain input and output values -->
 <p>
-    <strong>Wejście: </strong> String.
+   <strong>Dane wejściowe:</strong> A {% if is_js %}string{% else %} string <span>(str)</span>{% endif %}.
 </p>
 
 <p>
-    <strong>Wyjście: </strong> String. 
+   <strong>Dane wyjściowe:</strong> A {% if is_js %}ciąg <span>(string)</span>{% else %} ciąg <span>(str)</span>{% endif %}. 
 </p>
 
 
 <!-- Give some usage examples -->
 <div class="for_info_only">
     <p>
-        <strong>Przykład:</strong>
+        <strong>Przykłady:</strong>
     </p>
-
 
 <pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
 </div>
