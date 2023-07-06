@@ -1,0 +1,129 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        <p>我不知道如何开始解决这个任务。</p>
+    </div>
+    <div class="answer">
+        <p>
+            💡想法是声明新的字符串变量，遍历<b class="code">value</b> ，并将每个字符添加到新字符串的开头。
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>好吧，我应该从什么开始呢？</p>
+    </div>
+    <div class="answer">
+        <p>
+            让我们声明新的变量<b class="code">res</b> ，初始值为空字符串。
+        </p>
+        <pre class="brush: javascript">
+let res = "";
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            这很简单!但如何转移初始字符串呢？
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            为此目的，使用<a target="_blank" href="https://www.w3schools.com/js/js_loop_forof.asp">for/of</a> 循环。
+        </p>
+        <pre class="brush: javascript">
+let res = "";
+for (let char of value)
+    ...;
+        </pre>
+        <p>
+            由于你在循环内只有一行代码，你可以不使用弯括号。
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            我不明白如何将每个字符正确地添加到新字符串中。
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            你需要得到一个具有倒序字符的字符串。如果是正常的顺序，你只需将新的字符添加到现有的字符行的末尾，那么在倒序的情况下，你需要将每个新的字符添加到现有的行之前。
+        </p>
+        <pre class="brush: javascript">
+let res = "";
+for (let char of value)
+    res = char + res;
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>那么，我的最终解决方案应该是什么样子的呢？</p>
+    </div>
+    <div class="answer">
+        <p>
+            你只需要将你的代码包装成函数表达式并返回新的字符串<b class="code">res</b> 。
+        </p>
+        <p>以下是整个解决方案：</p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function backwardString(value: string): string {
+
+    let res = "";
+    for (let char of value)
+        res = char + res;
+    
+    return res;
+}
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>告诉我更多的解决方案!<br />
+        因为我想成为一个真正的🥇 Javascript英雄!</p>
+    </div>
+    <div class="answer">
+        <p>当然，抓住它!</p>
+        <p>
+            这个解决方案使用了递归--每次你都把第一个字符放在同一个函数的调用之后，但用较小的字符串参数。为了避免无限递归，只需从一个字符返回字符串。
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function backwardString(value: string): string {
+
+    if (value.length < 2)
+        
+        return value;
+    
+    return backwardString(value.slice(1)) + value.charAt(0);
+}
+        </pre>
+        </div>
+        <p>
+            单行解决方案，即用空字符分割初始字符串（结果--所有字符的数组），反转数组并连接所有字符，每两个字符之间为空字符--简单地连接新字符串中的所有字符。
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function backwardString(value: string): string {
+    
+    return value.split('').reverse().join('');
+}
+        </pre>
+        </div>
+        <p><b>Click "Best solutions" at mission menu and see a lot of other interesting solutions!</b></p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>谢谢!我现在知道并理解了更多!一切运作正常</p>
+    </div>
+    <div class="answer">
+        👍很高兴听到这个消息!
+    </div>
+</div>
+</body>
