@@ -1,0 +1,56 @@
+<body data-author="Doppelok">
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Ich habe keine Ahnung, wie ich mit der Lösung dieser Mission beginnen soll...
+        </p>
+    </div>
+    <div class="answer">
+        <p>Das Wichtigste zuerst - <a href="https://www.google.com/search?q=python+slicing" target="_blank">google "python slicing".</a></p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Ich kann es nicht verstehen...
+        </p>
+    </div>
+    <div class="answer">
+        <p>Lassen Sie uns einen einfachen Test machen. Was passiert, wenn Sie Ihre Python-Konsole öffnen und "a = [1, 2, 3]" sagen und dann einen negativen Schritt auf diese Liste anwenden?</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Was ist ein "negativer Schritt"?
+        </p>
+    </div>
+    <div class="answer">
+        <p>Sie können einen negativen Schritt verwenden, um eine umgekehrte Liste zu erhalten:</p>
+        <pre class="brush: python">
+a = [1, 2, 3]
+print(a[::-1])
+        </pre>
+        <div class="output">
+            <p>Ausgabe:</p>
+            <pre>[3, 2, 1]</pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Eine letzte Frage. Wie wird meine endgültige Lösung aussehen?
+        </p>
+    </div>
+    <div class="answer">
+        <div class="spoiler">
+        <pre class="brush: python">
+def backward_string(val: str) -> str:
+
+    return val[::-1]
+        </pre>
+        </div>
+    </div>
+</div>
+</body>

@@ -1,0 +1,129 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        <p>Ich habe keine Ahnung, wie ich mit der Lösung dieser Aufgabe beginnen soll.</p>
+    </div>
+    <div class="answer">
+        <p>
+            die Idee ist, eine neue String-Variable zu deklarieren, über die <b class="code">value</b> zu iterieren und jedes Zeichen an den Anfang des neuen Strings zu setzen.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Ok, womit soll ich beginnen?</p>
+    </div>
+    <div class="answer">
+        <p>
+            Deklarieren wir eine neue Variable <b class="code">res</b> mit dem Anfangswert einer leeren Zeichenkette.
+        </p>
+        <pre class="brush: javascript">
+let res = "";
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Das ist einfach! Aber wie kann man die anfängliche Zeichenkette überschreiben?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Verwenden Sie zu diesem Zweck die Schleife <a target="_blank" href="https://www.w3schools.com/js/js_loop_forof.asp">for/of</a>.
+        </p>
+        <pre class="brush: javascript">
+let res = "";
+for (let char of value)
+    ...;
+        </pre>
+        <p>
+            Da Sie nur eine Codezeile innerhalb der Schleife haben werden, können Sie keine geschwungenen Klammern verwenden.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Ich verstehe nicht, wie man die einzelnen Zeichen der neuen Zeichenkette richtig hinzufügt.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Sie müssen eine Zeichenkette mit rückwärts gerichteter Reihenfolge der Zeichen erhalten. Bei normaler Reihenfolge fügen Sie das neue Zeichen einfach an das Ende der bestehenden Zeichenreihe an. Bei rückwärts gerichteter Reihenfolge müssen Sie jedes neue Zeichen vor der bestehenden Reihe einfügen.
+        </p>
+        <pre class="brush: javascript">
+let res = "";
+for (let char of value)
+    res = char + res;
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Wie sollte also meine endgültige Lösung aussehen?</p>
+    </div>
+    <div class="answer">
+        <p>
+            Sie müssen Ihren Code einfach in einen Funktionsausdruck einpacken und die neue Zeichenkette <b class="code">res</b> zurückgeben.
+        </p>
+        <p>Hier ist die gesamte Lösung:</p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function backwardString(value: string): string {
+
+    let res = "";
+    for (let char of value)
+        res = char + res;
+    
+    return res;
+}
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Zeigen Sie mir mehr Lösungen!<br />
+        denn ich möchte ein echter 🥇 Javascript-Held sein!</p>
+    </div>
+    <div class="answer">
+        <p>Klar, schnappen Sie es sich!</p>
+        <p>
+            Diese Lösung verwendet eine Rekursion - jedes Mal setzen Sie das erste Zeichen nach dem Aufruf der gleichen Funktion, aber mit einem kleineren String-Argument. Um eine unendliche Rekursion zu vermeiden, geben Sie einfach die Zeichenkette ab einem Zeichen zurück.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function backwardString(value: string): string {
+
+    if (value.length < 2)
+        
+        return value;
+    
+    return backwardString(value.slice(1)) + value.charAt(0);
+}
+        </pre>
+        </div>
+        <p>
+            Eine einzeilige Lösung, bei der Sie die ursprüngliche Zeichenkette durch das leere Zeichen teilen (Ergebnis - Array aller Zeichen), das Array umkehren und alle Zeichen mit dem leeren Zeichen dazwischen verbinden - verbinden Sie einfach alle Zeichen in der neuen Zeichenkette.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function backwardString(value: string): string {
+    
+    return value.split('').reverse().join('');
+}
+        </pre>
+        </div>
+        <p><b>Click "Best solutions" at mission menu and see a lot of other interesting solutions!</b></p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Danke! Ich weiß und verstehe jetzt mehr! Alles funktioniert einwandfrei!</p>
+    </div>
+    <div class="answer">
+        👍 Freut mich zu hören!
+    </div>
+</div>
+</body>
